@@ -1,0 +1,46 @@
+.hidden {
+  display: none;
+}
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+.list {
+  list-style-type: none;
+  width: 80vw;
+  height: 8vh;
+  border: 1px grey solid;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+.mycheckbox {
+  /* background-image: url("/assets/images/icon-check.svg"); */
+  width: 20px;
+  height: 20px;
+  border: 1px grey solid;
+  border-radius: 50%;
+  display: inline-block;
+  /* background-color: blue; */
+  margin: 10px;
+}
+
+.mycheckbox2 {
+  background-image: url("/assets/images/icon-check.svg");
+  background-color: blue;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+}
+.circle {
+  width: 16px;
+  height: 16px;
+  border: 1px grey solid;
+  border-radius: 50%;
+}
+
+.cross {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}

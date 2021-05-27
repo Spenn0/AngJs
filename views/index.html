@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Todo</h2>
+    <div ng-controller="TodoListController as todoList">
+      <form ng-submit="todoList.addTodo()">
+        <input
+          type="text"
+          ng-model="todoList.todoText"
+          size="30"
+          placeholder="add new todo here"
+        />
+        <input class="btn-primary" type="submit" value="add" />
+      </form>
+
+      <span
+        >{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span
+      >
+      [ <a href="" ng-click="todoList.archive()">archive</a> ]
+      <!-- FIND A WAY TO CHANGE THE CHECKBOXES TO SVGS -->
+      <ul class="unstyled">
+        <li class="list" ng-repeat="todo in todoList.todos">
+          <label for="myInput">
+            <input
+              class="mycheckbox"
+              type="checkbox"
+              ng-model="todo.done"
+              name="myInput"
+            />
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </label>
+        </li>
+      </ul>
+      <div>
+        <button ng-click="showAll()">All</button>
+        <button ng-click="todoList.showActive()">Active</button>
+        <button>Complete</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- <div ng-controller="TodoListController as todoList">
+     FIND A WAY TO CHANGE THE CHECKBOXES TO SVGS
+    <ul class="unstyled">
+      <li class="list" ng-repeat="todo in todoList.todos">
+        
+        <img
+          class="mycheckbox"
+          src="/assets/images/icon-check.svg"
+          alt=""
+          ng-model="todo.done"
+          ng-click=""
+        /> 
+        <label class="mycheckbox" for="myInput">
+          <input
+            class="mycheckbox"
+            type="checkbox"
+            ng-model="todo.done"
+            name="myInput"
+          /> 
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+          <img class="cross" src="/assets/images/icon-cross.svg" alt="" />
+        </label>
+      </li>
+    </ul>
+  </div> -->
